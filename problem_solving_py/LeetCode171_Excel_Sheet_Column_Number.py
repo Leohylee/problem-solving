@@ -4,9 +4,6 @@
 #
 # The solution set must not contain duplicate subsets. Return the solution in any order.
 
-from typing import List
-
-
 class Solution:
     def titleToNumber(self, columnTitle: str) -> int:
         ans = 0
