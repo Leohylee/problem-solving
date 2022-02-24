@@ -1,8 +1,4 @@
-# https://leetcode.com/problems/subsets/
-#
-# Given an integer array nums of unique elements, return all possible subsets (the power set).
-#
-# The solution set must not contain duplicate subsets. Return the solution in any order.
+# https://leetcode.com/problems/clone-graph/
 
 # Definition for a Node.
 class Node:
