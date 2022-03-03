@@ -4,20 +4,14 @@ from typing import List
 
 class Solution:
     def numberOfArithmeticSlices(self, nums: List[int]) -> int:
-        cnt = ans = 0
-        if len(nums) < 3:
-            return 0
-        seq = nums[1] - nums[0]
-        for i in range(0, len(nums)):
-            if i < len(nums) - 1 and nums[i + 1] - nums[i] == seq:
-                cnt = cnt + 1
-            else:
-                if cnt >= 2:
-                    ans = ans + ((cnt - 1) / 2 * (1 + cnt - 1))
-                cnt = 1
-                if i < len(nums) - 1:
-                    seq = nums[i + 1] - nums[i]
-        return int(ans)
+        n = len(nums)
+        dp = [0] * n
+        ans = 0
+        for i in range(2, n):
+            if nums[i - 1] - nums[i - 2] == nums[i] - nums[i - 1]:
+                dp[i] = dp[i - 1] + 1
+            ans += dp[i]
+        return ans
 
 
 if __name__ == "__main__":
