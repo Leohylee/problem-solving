@@ -1,19 +1,22 @@
 # https://leetcode.com/problems/permutations-ii/
+from collections import Counter
 from typing import List, Set
 
 
 class Solution:
-    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-        return list(list(num) for num in self.backtrack([], set(), list(nums), len(nums)))
-
-    def backtrack(self, temp: List[int], ans: Set[tuple], pool: List[int], size: int):
-        if len(temp) == size:
-            ans.add(tuple(temp))
-            return
-        for i in range(len(pool)):
-            temp.append(pool.pop(0))
-            self.backtrack(temp, ans, pool, size)
-            pool.append(temp.pop())
+    def permuteUnique(self, nums):
+        def btrack(path, counter):
+            if len(path)==len(nums):
+                ans.append(path[:])
+            for x in counter:  # dont pick duplicates
+                if counter[x] > 0:
+                    path.append(x)
+                    counter[x] -= 1
+                    btrack(path, counter)
+                    path.pop()
+                    counter[x] += 1
+        ans = []
+        btrack([], Counter(nums))
         return ans
 
 
