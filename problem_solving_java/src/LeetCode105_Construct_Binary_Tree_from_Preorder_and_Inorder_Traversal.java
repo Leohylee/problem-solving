@@ -4,26 +4,33 @@ public class LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Travers
 
     public static void main(String[] args) {
         LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Solution solution = new LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Solution();
-        System.out.println(solution.buildTree(new int[]{1,2,4,5,3}, new int[]{4,2,5,1,3}));
+        System.out.println(solution.buildTree(new int[]{1,2}, new int[]{2,1}));
     }
 
 }
 
 class LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Solution {
     int[] preorder;
-    int[] inorder;
+    int curr = 0;
 
     public LeetCode105_TreeNode buildTree(int[] preorder, int[] inorder) {
         this.preorder = preorder;
-        this.inorder = inorder;
-        return processNext(0, 0, new LeetCode105_TreeNode());
+        return processNext(inorder);
     }
 
-    private LeetCode105_TreeNode processNext(int pre, int in, LeetCode105_TreeNode curr) {
-        if (preorder[pre] != inorder[in]) {
-            curr.val = preorder[pre];
-
+    private LeetCode105_TreeNode processNext(int[] pool) {
+        LeetCode105_TreeNode root = new LeetCode105_TreeNode(preorder[curr]);
+        if (pool.length < 1) return null;
+        if (pool.length == 1) {
+            curr++;
+            return root;
         }
+        int target = 0;
+        while (preorder[curr] != pool[target]) target++;
+        curr++;
+        root.left = processNext(Arrays.copyOfRange(pool, 0, target));
+        if (target + 1 != pool.length) root.right = processNext(Arrays.copyOfRange(pool, target + 1, pool.length));
+        return root;
     }
 
 }
