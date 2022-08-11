@@ -4,7 +4,7 @@ public class LeetCode102_Binary_Tree_Level_Order_Traversal {
 
     public static void main(String[] args) {
         LeetCode102_Binary_Tree_Level_Order_Traversal_Solution solution = new LeetCode102_Binary_Tree_Level_Order_Traversal_Solution();
-        LeetCode102_TreeNode node = new LeetCode102_TreeNode(3, new LeetCode102_TreeNode(9), new LeetCode102_TreeNode(20, new LeetCode102_TreeNode(15), new LeetCode102_TreeNode(7)));
+        TreeNode node = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         System.out.println(solution.levelOrder(node));
     }
 
@@ -13,14 +13,14 @@ public class LeetCode102_Binary_Tree_Level_Order_Traversal {
 class LeetCode102_Binary_Tree_Level_Order_Traversal_Solution {
     Map<Integer, List<Integer>> levels = new HashMap<>();
 
-    public List<List<Integer>> levelOrder(LeetCode102_TreeNode root) {
+    public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         enterLevel(root, 0);
         levels.forEach((level, vals) -> res.add(level, vals));
         return res;
     }
 
-    private void enterLevel(LeetCode102_TreeNode node, Integer level) {
+    private void enterLevel(TreeNode node, Integer level) {
         if (node != null) {
             if (levels.get(level) == null) {
                 levels.put(level, new ArrayList<>(Arrays.asList(node.val)));
@@ -32,17 +32,4 @@ class LeetCode102_Binary_Tree_Level_Order_Traversal_Solution {
         }
     }
 
-}
-
-class LeetCode102_TreeNode {
-    int val;
-    LeetCode102_TreeNode left;
-    LeetCode102_TreeNode right;
-    LeetCode102_TreeNode() {}
-    LeetCode102_TreeNode(int val) { this.val = val; }
-    LeetCode102_TreeNode(int val, LeetCode102_TreeNode left, LeetCode102_TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 }

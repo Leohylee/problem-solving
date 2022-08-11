@@ -13,13 +13,13 @@ class LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Solu
     int[] preorder;
     int curr = 0;
 
-    public LeetCode105_TreeNode buildTree(int[] preorder, int[] inorder) {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
         this.preorder = preorder;
         return processNext(inorder);
     }
 
-    private LeetCode105_TreeNode processNext(int[] pool) {
-        LeetCode105_TreeNode root = new LeetCode105_TreeNode(preorder[curr]);
+    private TreeNode processNext(int[] pool) {
+        TreeNode root = new TreeNode(preorder[curr]);
         if (pool.length < 1) return null;
         if (pool.length == 1) {
             curr++;
@@ -33,17 +33,4 @@ class LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Solu
         return root;
     }
 
-}
-
-class LeetCode105_TreeNode {
-    int val;
-    LeetCode105_TreeNode left;
-    LeetCode105_TreeNode right;
-    LeetCode105_TreeNode() {}
-    LeetCode105_TreeNode(int val) { this.val = val; }
-    LeetCode105_TreeNode(int val, LeetCode105_TreeNode left, LeetCode105_TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 }
