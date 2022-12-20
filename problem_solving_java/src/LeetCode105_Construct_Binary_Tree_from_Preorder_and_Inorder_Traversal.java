@@ -3,17 +3,27 @@ import java.util.*;
 public class LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
 
     public static void main(String[] args) {
-        LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Solution solution = new LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Solution();
+        LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal solution = new LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal();
         System.out.println(solution.buildTree(new int[]{1,2}, new int[]{2,1}));
     }
 
-}
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
-class LeetCode105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_Solution {
-    int[] preorder;
-    int curr = 0;
+    private int[] preorder;
+    private int curr = 0;
 
-    public TreeNode buildTree(int[] preorder, int[] inorder) {
+    private TreeNode buildTree(int[] preorder, int[] inorder) {
         this.preorder = preorder;
         return processNext(inorder);
     }

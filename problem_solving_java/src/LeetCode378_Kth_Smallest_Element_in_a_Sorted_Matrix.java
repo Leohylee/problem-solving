@@ -1,14 +1,11 @@
 public class LeetCode378_Kth_Smallest_Element_in_a_Sorted_Matrix {
 
     public static void main(String[] args) {
-        LeetCode378_Kth_Smallest_Element_in_a_Sorted_Matrix_Solution solution = new LeetCode378_Kth_Smallest_Element_in_a_Sorted_Matrix_Solution();
+        LeetCode378_Kth_Smallest_Element_in_a_Sorted_Matrix solution = new LeetCode378_Kth_Smallest_Element_in_a_Sorted_Matrix();
         System.out.println(solution.kthSmallest(new int[][]{{1,5,9},{10,11,13},{12,13,15}}, 8));
     }
 
-}
-
-class LeetCode378_Kth_Smallest_Element_in_a_Sorted_Matrix_Solution {
-    public int kthSmallest(int[][] matrix, int k) {
+    private int kthSmallest(int[][] matrix, int k) {
         int l = matrix[0][0], r = matrix[matrix.length-1][matrix[0].length-1];
         int ans = -1;
         while (l <= r) {
@@ -32,4 +29,5 @@ class LeetCode378_Kth_Smallest_Element_in_a_Sorted_Matrix_Solution {
         }
         return cnt;
     }
+
 }

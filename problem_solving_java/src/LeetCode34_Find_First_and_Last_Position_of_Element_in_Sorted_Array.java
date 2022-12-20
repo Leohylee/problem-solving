@@ -1,14 +1,11 @@
 public class LeetCode34_Find_First_and_Last_Position_of_Element_in_Sorted_Array {
 
     public static void main(String[] args) {
-        LeetCode34_Find_First_and_Last_Position_of_Element_in_Sorted_Array_Solution solution = new LeetCode34_Find_First_and_Last_Position_of_Element_in_Sorted_Array_Solution();
+        LeetCode34_Find_First_and_Last_Position_of_Element_in_Sorted_Array solution = new LeetCode34_Find_First_and_Last_Position_of_Element_in_Sorted_Array();
         System.out.println(solution.searchRange(new int[]{5,6,7,7,8,8,8,8,8,8,10}, 8));
     }
 
-}
-
-class LeetCode34_Find_First_and_Last_Position_of_Element_in_Sorted_Array_Solution {
-    public int[] searchRange(int[] nums, int target) {
+    private int[] searchRange(int[] nums, int target) {
         int[] ans = new int[]{-1, -1};
         int pos = binarySearch(nums, target, 0, nums.length - 1);
         if (pos != -1) {
@@ -24,7 +21,7 @@ class LeetCode34_Find_First_and_Last_Position_of_Element_in_Sorted_Array_Solutio
         return ans;
     }
 
-    public int binarySearch(int[] nums, int target, int l, int r) {
+    private int binarySearch(int[] nums, int target, int l, int r) {
         if (l > r) return -1;
         int mid = (l + r) / 2;
         if (nums[mid] == target) return mid;
@@ -34,4 +31,5 @@ class LeetCode34_Find_First_and_Last_Position_of_Element_in_Sorted_Array_Solutio
             return binarySearch(nums, target, mid + 1, r);
         }
     }
+
 }

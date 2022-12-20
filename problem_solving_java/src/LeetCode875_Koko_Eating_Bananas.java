@@ -15,14 +15,11 @@
 public class LeetCode875_Koko_Eating_Bananas {
 
     public static void main(String[] args) {
-        LeetCode875_Koko_Eating_Bananas_Solution solution = new LeetCode875_Koko_Eating_Bananas_Solution();
+        LeetCode875_Koko_Eating_Bananas solution = new LeetCode875_Koko_Eating_Bananas();
         System.out.println(solution.minEatingSpeed(new int[]{3,6,7,11}, 8));
     }
 
-}
-
-class LeetCode875_Koko_Eating_Bananas_Solution {
-    public int minEatingSpeed(int[] piles, int h) {
+    private int minEatingSpeed(int[] piles, int h) {
         int max = 1;
         int min = 1;
         for (int num : piles) {
@@ -44,7 +41,7 @@ class LeetCode875_Koko_Eating_Bananas_Solution {
         return ans;
     }
 
-    public boolean canEatInTime(int mid, int[] piles, int time) {
+    private boolean canEatInTime(int mid, int[] piles, int time) {
         int sum = 0;
         for (int bananas : piles) {
             sum += (Math.ceil((double) bananas / (double) mid) <= 1) ? 1 : Math.ceil((double) bananas / (double) mid);
@@ -52,4 +49,5 @@ class LeetCode875_Koko_Eating_Bananas_Solution {
         }
         return true;
     }
+
 }

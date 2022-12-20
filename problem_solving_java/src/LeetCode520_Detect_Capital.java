@@ -9,14 +9,11 @@
 public class LeetCode520_Detect_Capital {
 
     public static void main(String[] args) {
-        LeetCode520_Detect_Capital_Solution solution = new LeetCode520_Detect_Capital_Solution();
+        LeetCode520_Detect_Capital solution = new LeetCode520_Detect_Capital();
         System.out.println(solution.detectCapitalUse("USA"));
     }
 
-}
-
-class LeetCode520_Detect_Capital_Solution {
-    public boolean detectCapitalUse(String word) {
+    private boolean detectCapitalUse(String word) {
         if (word.length() < 2) return true;
         boolean firstLowerCase = Character.isLowerCase(word.charAt(0));
         boolean secondLowerCase = Character.isLowerCase(word.charAt(1));
@@ -27,4 +24,5 @@ class LeetCode520_Detect_Capital_Solution {
         }
         return true;
     }
+
 }

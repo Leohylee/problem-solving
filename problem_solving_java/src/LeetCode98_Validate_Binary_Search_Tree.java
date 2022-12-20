@@ -1,13 +1,24 @@
 public class LeetCode98_Validate_Binary_Search_Tree {
     public static void main(String[] args) {
-        LeetCode98_Validate_Binary_Search_Tree_Solution solution = new LeetCode98_Validate_Binary_Search_Tree_Solution();
-        TreeNode node = new TreeNode(2, new TreeNode(1), new TreeNode(3, new TreeNode(4), new TreeNode(7)));
+        LeetCode98_Validate_Binary_Search_Tree solution = new LeetCode98_Validate_Binary_Search_Tree();
+        TreeNode node = solution.new TreeNode(2, solution.new TreeNode(1), solution.new TreeNode(3, solution.new TreeNode(4), solution.new TreeNode(7)));
         System.out.println(solution.isValidBST(node));
     }
-}
 
-class LeetCode98_Validate_Binary_Search_Tree_Solution {
-    public boolean isValidBST(TreeNode root) {
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    private boolean isValidBST(TreeNode root) {
         return recursion(root.left, null, root.val) && recursion(root.right, root.val, null);
     }
 

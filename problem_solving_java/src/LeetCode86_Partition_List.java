@@ -1,19 +1,24 @@
 public class LeetCode86_Partition_List {
 
     public static void main(String[] args) {
-        LeetCode86_Partition_List_Solution solution = new LeetCode86_Partition_List_Solution();
-        ListNode_86 node = new ListNode_86();
+        LeetCode86_Partition_List solution = new LeetCode86_Partition_List();
+        ListNode node = solution.new ListNode();
         System.out.println(solution.partition(node, 0));
     }
 
-}
+    private class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
 
-class LeetCode86_Partition_List_Solution {
-    public ListNode_86 partition(ListNode_86 head, int x) {
-        ListNode_86 big = new ListNode_86(0), small = new ListNode_86(0);
-        ListNode_86 startB = big, startS = small;
+    private ListNode partition(ListNode head, int x) {
+        ListNode big = new ListNode(0), small = new ListNode(0);
+        ListNode startB = big, startS = small;
         while (head != null) {
-            ListNode_86 temp = new ListNode_86(head.val);
+            ListNode temp = new ListNode(head.val);
             if (head.val < x) {
                 small.next = temp;
                 small = small.next;
@@ -27,12 +32,5 @@ class LeetCode86_Partition_List_Solution {
         small.next = startB.next;
         return startS;
     }
-}
 
-class ListNode_86 {
-    int val;
-    ListNode_86 next;
-    ListNode_86() {}
-    ListNode_86(int val) { this.val = val; }
-    ListNode_86(int val, ListNode_86 next) { this.val = val; this.next = next; }
 }

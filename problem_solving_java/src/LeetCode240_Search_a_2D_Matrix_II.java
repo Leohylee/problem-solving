@@ -1,13 +1,10 @@
 public class LeetCode240_Search_a_2D_Matrix_II {
 
     public static void main(String[] args) {
-        LeetCode240_Search_a_2D_Matrix_II_Solution solution = new LeetCode240_Search_a_2D_Matrix_II_Solution();
+        LeetCode240_Search_a_2D_Matrix_II solution = new LeetCode240_Search_a_2D_Matrix_II();
         System.out.println(solution.searchMatrix(new int[][]{{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}}, 31));
     }
 
-}
-
-class LeetCode240_Search_a_2D_Matrix_II_Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix.length == 0) return false;
         int x = 0, y = 0;
@@ -31,4 +28,5 @@ class LeetCode240_Search_a_2D_Matrix_II_Solution {
         }
         return false;
     }
+
 }

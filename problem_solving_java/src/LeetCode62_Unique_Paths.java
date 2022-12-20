@@ -1,14 +1,11 @@
 public class LeetCode62_Unique_Paths {
 
     public static void main(String[] args) {
-        LeetCode62_Unique_Paths_Solution solution = new LeetCode62_Unique_Paths_Solution();
+        LeetCode62_Unique_Paths solution = new LeetCode62_Unique_Paths();
         System.out.println(solution.uniquePaths(3, 7));
     }
 
-}
-
-class LeetCode62_Unique_Paths_Solution {
-    public int uniquePaths(int m, int n) {
+    private int uniquePaths(int m, int n) {
         int[][] grid = new int[m][n];
         for (int j = 0; j < m; j++) {
             for (int i = 0; i < n; i++) {
@@ -23,4 +20,5 @@ class LeetCode62_Unique_Paths_Solution {
         }
         return grid[m-1][n-1];
     }
+
 }

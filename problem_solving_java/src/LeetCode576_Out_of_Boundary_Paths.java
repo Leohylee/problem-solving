@@ -11,14 +11,11 @@ import java.util.List;
 public class LeetCode576_Out_of_Boundary_Paths {
 
     public static void main(String[] args) {
-        LeetCode576_Out_of_Boundary_Paths_Solution solution = new LeetCode576_Out_of_Boundary_Paths_Solution();
+        LeetCode576_Out_of_Boundary_Paths solution = new LeetCode576_Out_of_Boundary_Paths();
         System.out.println(solution.findPaths(8,7,16,1,5));
     }
 
-}
-
-class LeetCode576_Out_of_Boundary_Paths_Solution {
-    public int findPaths(int m, int n, int N, int i, int j) {
+    private int findPaths(int m, int n, int N, int i, int j) {
         if (N <= 0) return 0;
 
         final int MOD = 1000000007;
@@ -49,4 +46,5 @@ class LeetCode576_Out_of_Boundary_Paths_Solution {
 
         return result;
     }
+
 }

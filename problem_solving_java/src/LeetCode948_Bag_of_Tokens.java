@@ -3,14 +3,11 @@ import java.util.Arrays;
 public class LeetCode948_Bag_of_Tokens {
 
     public static void main(String[] args) {
-        LeetCode948_Bag_of_Tokens_Solution solution = new LeetCode948_Bag_of_Tokens_Solution();
+        LeetCode948_Bag_of_Tokens solution = new LeetCode948_Bag_of_Tokens();
         System.out.println(solution.bagOfTokensScore(new int[]{100,200,350,300,400}, 200));
     }
 
-}
-
-class LeetCode948_Bag_of_Tokens_Solution {
-    public int bagOfTokensScore(int[] tokens, int power) {
+    private int bagOfTokensScore(int[] tokens, int power) {
         int score = 0;
         int head = 0;
         int tail = tokens.length - 1;
@@ -30,4 +27,5 @@ class LeetCode948_Bag_of_Tokens_Solution {
         }
         return score;
     }
+
 }

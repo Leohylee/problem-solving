@@ -10,14 +10,11 @@ import java.util.List;
 public class LeetCode290_Word_Pattern {
 
     public static void main(String[] args) {
-        LeetCode290_Word_Pattern_Solution solution = new LeetCode290_Word_Pattern_Solution();
+        LeetCode290_Word_Pattern solution = new LeetCode290_Word_Pattern();
         System.out.println(solution.wordPattern("abba", "dog cat cat dog"));
     }
 
-}
-
-class LeetCode290_Word_Pattern_Solution {
-    public boolean wordPattern(String pattern, String s) {
+    private boolean wordPattern(String pattern, String s) {
         String[] words = s.split(" ");
         if (words.length != pattern.length()) return false;
         List<Character> chars = new ArrayList();
@@ -43,4 +40,5 @@ class LeetCode290_Word_Pattern_Solution {
         }
         return true;
     }
+
 }

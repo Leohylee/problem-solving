@@ -3,14 +3,11 @@ import java.util.Arrays;
 public class LeetCode393_UTF8_Validation {
 
     public static void main(String[] args) {
-        LeetCode393_UTF8_Validation_Solution solution = new LeetCode393_UTF8_Validation_Solution();
+        LeetCode393_UTF8_Validation solution = new LeetCode393_UTF8_Validation();
         System.out.println(solution.validUtf8(new int[]{197}));
     }
 
-}
-
-class LeetCode393_UTF8_Validation_Solution {
-    public boolean validUtf8(int[] data) {
+    private boolean validUtf8(int[] data) {
         int bytes = 0;
         for (int seq : data) {
             String oct = String.format("%08d", Integer.parseInt(Integer.toBinaryString(seq)));
@@ -36,4 +33,5 @@ class LeetCode393_UTF8_Validation_Solution {
         }
         return bytes == 0;
     }
+
 }

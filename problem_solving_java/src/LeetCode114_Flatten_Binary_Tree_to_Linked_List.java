@@ -1,16 +1,26 @@
 public class LeetCode114_Flatten_Binary_Tree_to_Linked_List {
 
     public static void main(String[] args) {
-        LeetCode114_Flatten_Binary_Tree_to_Linked_List_Solution solution = new LeetCode114_Flatten_Binary_Tree_to_Linked_List_Solution();
-        TreeNode node = new TreeNode(1, new TreeNode(2, new TreeNode(3), new TreeNode(4)), new TreeNode(5, null, new TreeNode(6)));
+        LeetCode114_Flatten_Binary_Tree_to_Linked_List solution = new LeetCode114_Flatten_Binary_Tree_to_Linked_List();
+        TreeNode node = solution.new TreeNode(1, solution.new TreeNode(2, solution.new TreeNode(3), solution.new TreeNode(4)), solution.new TreeNode(5, null, solution.new TreeNode(6)));
         solution.flatten(node);
     }
 
-}
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
-class LeetCode114_Flatten_Binary_Tree_to_Linked_List_Solution {
     private TreeNode ans = null;
-    public void flatten(TreeNode root) {
+    private void flatten(TreeNode root) {
         if (root == null) return;
         TreeNode left = root.left;
         TreeNode right = root.right;
@@ -24,4 +34,5 @@ class LeetCode114_Flatten_Binary_Tree_to_Linked_List_Solution {
         }
         curr.right = right;
     }
+
 }

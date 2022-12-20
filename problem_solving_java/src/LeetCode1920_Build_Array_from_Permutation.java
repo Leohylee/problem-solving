@@ -8,13 +8,10 @@
 public class LeetCode1920_Build_Array_from_Permutation {
 
     public static void main(String[] args) {
-        LeetCode1920_Build_Array_from_Permutation_Solution solution = new LeetCode1920_Build_Array_from_Permutation_Solution();
+        LeetCode1920_Build_Array_from_Permutation solution = new LeetCode1920_Build_Array_from_Permutation();
         System.out.println(solution.buildArray(new int[]{0,2,1,5,3,4}));
     }
 
-}
-
-class LeetCode1920_Build_Array_from_Permutation_Solution {
     public int[] buildArray(int[] nums) {
         int[] news = new int[nums.length];
         int pos = 0;
@@ -24,4 +21,5 @@ class LeetCode1920_Build_Array_from_Permutation_Solution {
         }
         return news;
     }
+
 }

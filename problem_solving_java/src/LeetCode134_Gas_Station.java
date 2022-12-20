@@ -12,14 +12,11 @@
 public class LeetCode134_Gas_Station {
 
     public static void main(String[] args) {
-        LeetCode134_Gas_Station_Solution solution = new LeetCode134_Gas_Station_Solution();
+        LeetCode134_Gas_Station solution = new LeetCode134_Gas_Station();
         System.out.println(solution.canCompleteCircuit(new int[]{1,2,3,4,5}, new int[]{3,4,5,1,2}));
     }
 
-}
-
-class LeetCode134_Gas_Station_Solution {
-    public int canCompleteCircuit(int[] gas, int[] cost) {
+    private int canCompleteCircuit(int[] gas, int[] cost) {
         int sum = 0, n = gas.length;
         int gasInTank = 0, start = 0;
         for(int i=0;i<n;i++) {
@@ -34,4 +31,5 @@ class LeetCode134_Gas_Station_Solution {
 
         return sum >= 0 ? start : -1;
     }
+
 }

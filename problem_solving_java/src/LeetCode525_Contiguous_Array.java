@@ -7,14 +7,11 @@ import java.util.*;
 public class LeetCode525_Contiguous_Array {
 
     public static void main(String[] args) {
-        LeetCode525_Cogtiguous_Array_Solution solution = new LeetCode525_Cogtiguous_Array_Solution();
+        LeetCode525_Contiguous_Array solution = new LeetCode525_Contiguous_Array();
         System.out.println(solution.findMaxLength(new int[]{0,1}));
     }
 
-}
-
-class LeetCode525_Cogtiguous_Array_Solution {
-    public int findMaxLength(int[] nums) {
+    private int findMaxLength(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         int cnt = 0;
         int ans = 0;
@@ -33,4 +30,5 @@ class LeetCode525_Cogtiguous_Array_Solution {
         }
         return ans;
     }
+
 }

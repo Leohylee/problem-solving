@@ -9,14 +9,11 @@
 public class LeetCode605_Can_Place_Flowers {
 
     public static void main(String[] args) {
-        LeetCode605_Can_Place_Flowers_Solution solution = new LeetCode605_Can_Place_Flowers_Solution();
+        LeetCode605_Can_Place_Flowers solution = new LeetCode605_Can_Place_Flowers();
         System.out.println(solution.canPlaceFlowers(new int[]{1,0,0,0,1}, 1));
     }
 
-}
-
-class LeetCode605_Can_Place_Flowers_Solution {
-    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+    private boolean canPlaceFlowers(int[] flowerbed, int n) {
         int count = 0;
         int prev = 0;
         int next = 0;
@@ -31,4 +28,5 @@ class LeetCode605_Can_Place_Flowers_Solution {
         };
         return count >= n;
     }
+
 }

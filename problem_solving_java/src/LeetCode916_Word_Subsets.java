@@ -4,14 +4,11 @@ import java.util.List;
 public class LeetCode916_Word_Subsets {
 
     public static void main(String[] args) {
-        LeetCode916_Word_Subsets_Solution solution = new LeetCode916_Word_Subsets_Solution();
+        LeetCode916_Word_Subsets solution = new LeetCode916_Word_Subsets();
         System.out.println(solution.wordSubsets(new String[]{"amazon","apple","facebook","google","leetcode"}, new String[]{"e","o"}));
     }
 
-}
-
-class LeetCode916_Word_Subsets_Solution {
-    public List<String> wordSubsets(String[] A, String[] B) {
+    private List<String> wordSubsets(String[] A, String[] B) {
         int[] count = new int[26], tmp;
         int i;
         for (String b : B) {
@@ -30,9 +27,10 @@ class LeetCode916_Word_Subsets_Solution {
         return res;
     }
 
-    int[] counter(String word) {
+    private int[] counter(String word) {
         int[] count = new int[26];
         for (char c : word.toCharArray()) count[c - 'a']++;
         return count;
     }
+
 }
