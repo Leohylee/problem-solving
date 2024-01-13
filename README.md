@@ -1,2 +1,2 @@
 # problem-solving
-Personal Journal of solving programming problems
+Records for programming puzzles / questions
