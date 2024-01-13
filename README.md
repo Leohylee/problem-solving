@@ -1,2 +1,2 @@
 # problem-solving
-Records for programming puzzles / questions
+Records for programming questions / puzzles
